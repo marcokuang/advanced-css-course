@@ -1,0 +1,9 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+
+    // float left and right therefore use 'both'
+    clear: both;
+  }
+}

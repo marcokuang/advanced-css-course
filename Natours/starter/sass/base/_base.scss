@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* html selector is the root element of the page  */
+html {
+  font-size: 10px;
+}
+
+body {
+  box-sizing: border-box;
+}
