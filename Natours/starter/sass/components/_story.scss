@@ -23,6 +23,7 @@
     -webkit-shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     position: relative;
+    overflow: hidden;
   }
 
   &__img {
