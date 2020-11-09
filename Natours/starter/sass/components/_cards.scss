@@ -183,4 +183,56 @@
     font-size: 8rem;
     font-weight: 100;
   }
+
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+
+    &__side {
+      height: auto;
+
+      // make the card sides on top of each other and hide the back side when rotating
+      position: relative;
+      box-shadow: none;
+      // makes the embeded background image adapt to the rounded corner
+
+      &--back {
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__details {
+      padding: 1rem;
+    }
+
+    // &:hover &__side--back {
+    //   transform: rotateY(0deg) translateY(-2rem);
+    // }
+
+    //Front side styling
+
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      text-align: center;
+      padding: 4rem 0 4rem 0;
+    }
+
+    &__price-box {
+      padding-bottom: 2rem;
+    }
+
+    &__price-value {
+      font-size: 5rem;
+    }
+  }
 }

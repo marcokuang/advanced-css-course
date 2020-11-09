@@ -2,12 +2,24 @@
   @include clearfix;
 
   max-width: $grid-width;
+
+  @include respond(tab-port) {
+    // width < 600
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   // background-color: #ddd;
   margin: 0 auto;
 
   // not pseudo class to find elements "not the last child"
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      // width < 600
+      margin-bottom: 6rem;
+    }
   }
 
   // attr selector
@@ -16,10 +28,21 @@
     // need to float the columns since we are using float system layout
     float: left;
 
+    @include respond(tab-port) {
+      // width < 600
+      width: 100% !important;
+    }
+
     // set up the margin on elements NOT the last child
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        // width < 600
+        margin-right: 0;
+        margin-bottom: 6rem;
+      }
     }
   }
 

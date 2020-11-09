@@ -50,6 +50,11 @@
     width: 33.3%;
     height: 100%;
     display: table-cell;
+    vertical-align: middle;
+
+    @include respond(phone) {
+      display: table-row;
+    }
   }
 
   &__right {
@@ -62,6 +67,14 @@
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab-land) {
+      margin-left: 2rem;
+    }
+
+    @include respond(phone) {
+      margin-left: 0rem;
+    }
   }
 
   &__text {
@@ -72,5 +85,10 @@
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-2;
     hyphens: auto;
+
+    @include respond(phone) {
+      column-count: 1;
+      column-gap: 0rem;
+    }
   }
 }
