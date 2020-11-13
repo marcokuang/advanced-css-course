@@ -12,6 +12,13 @@
   z-index: 200;
   transition: all 0.3s 0.2s;
 
+  // if a feature is supported, then the content block will apply
+  @supports (backdrop-filter: blur(10px)) or
+    (-webkit-backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-grey-darkest, 0.3);
+  }
+
   &__close {
     &:link,
     &:visited {

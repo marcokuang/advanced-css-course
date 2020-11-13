@@ -152,6 +152,30 @@
             <div class="composition">
               <img
                 src="img/nat-1.jpg"
+                alt="photo 1"
+                class="composition__photo composition__photo--p1"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(media-width: 56.25em) 20vw, (media-width: 37.5em) 30vw, 300px"
+              />
+
+              <img
+                src="img/nat-2.jpg"
+                alt="photo 2"
+                class="composition__photo composition__photo--p2"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(media-width: 56.25em) 20vw, (media-width: 37.5em) 30vw, 300px"
+              />
+
+              <img
+                src="img/nat-3.jpg"
+                alt="photo 3"
+                class="composition__photo composition__photo--p3"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(media-width: 56.25em) 20vw, (media-width: 37.5em) 30vw, 300px"
+              />
+
+              <!-- <img
+                src="img/nat-1.jpg"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
               />
@@ -164,7 +188,7 @@
                 src="img/nat-3.jpg"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -472,7 +496,22 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full Logo" class="footer__logo" />
+        <picture class="footer__log">
+          <!-- if the viewport width is smaller than 37.5em, the image will be taken from the source tag -->
+          <source
+            media="(max-width: 37.5em)"
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+          />
+          <!-- else the image will be taken from the img tag  -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full Logo"
+            class="footer__logo"
+          />
+        </picture>
       </div>
 
       <div class="row">
