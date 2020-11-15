@@ -1,0 +1,491 @@
+//logo
+
+.logo {
+  height: 3.25rem;
+  margin-left: 2rem;
+}
+
+.search {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__input {
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    border-radius: 10rem;
+    padding: 0.7rem 2rem;
+    width: 90%;
+    // makes the button search icon stick to the right of the input field
+    margin-right: -3.5rem;
+    transition: all 0.2s;
+
+    &:focus {
+      width: 100%;
+      outline: none;
+
+      background-color: var(--color-grey-light-3);
+    }
+  }
+
+  &__input:focus + &__button {
+    background-color: var(--color-grey-light-3);
+  }
+
+  &__button {
+    border: none;
+    background-color: var(--color-grey-light-2);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    // change the color of the svg icon
+    fill: var(--color-grey-dark-2);
+  }
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    &:hover {
+      background-color: var(--color-grey-light-2);
+    }
+  }
+
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: var(--color-grey-dark-2);
+  }
+
+  &__notification {
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+}
+
+//side navigation
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  margin-top: 3.5rem;
+  list-style: none;
+
+  &__item {
+    // height: 10rem;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+
+  &__link:link,
+  &__link:visited {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    position: relative;
+    z-index: 5;
+  }
+
+  &__icon {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: currentColor;
+
+    margin-right: 2rem;
+  }
+}
+
+// Gallery
+.gallery {
+  display: flex;
+  &__item {
+  }
+
+  &__photo {
+    // flexible image always has a width element
+    width: 100%;
+    // to prevent there would be space showing under the element when leaving it as inline
+    display: block;
+  }
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__stars {
+    margin-right: auto;
+    display: flex;
+    // background-color: teal;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    // margin-right: auto;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-location {
+    margin-right: 0.5rem;
+  }
+
+  &__rating {
+    background-color: var(--color-primary);
+    margin-left: 3rem;
+    color: #fff;
+    padding: 0 2.25rem;
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: -3px;
+  }
+
+  &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
+// Button inline
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+
+    & span {
+      margin-left: 8px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulseState 1s infinite;
+  }
+
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+  }
+}
+
+@keyframes pulseState {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+//paragraph
+.paragraph {
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+//list
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+  }
+
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+    //older browsers
+    // background-image: url(../img/chevron-thin-right.svg);
+    // background-size: cover;
+
+    // new browsers - masks
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+  }
+}
+
+//recommend
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__friends {
+    display: flex;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+  }
+}
+
+// reviews
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__user-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  &__rating {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: var(--color-primary);
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    line-height: 1;
+    top: -0.75rem;
+    left: -1.75rem;
+    font-size: 15rem;
+    color: var(--color-grey-light-2);
+    font-family: sans-serif;
+    z-index: 1;
+  }
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  background-color: #fff;
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  position: relative;
+
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulseState 1s infinite;
+  }
+}
